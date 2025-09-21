@@ -289,7 +289,7 @@ function containsSubstring(str, substring) {
  * Vowels: 'a', 'e', 'i', 'o', 'u', 'y', 'A', 'E', 'I', 'O', 'U', 'Y'.
  *
  * @param {string} str - The input string.
- * @return {number} - The number of vowels in the string.
+ * @return {number|number} - The number of vowels in the string.
  *
  * @example:
  *   countVowels('apple')  => 2
@@ -298,8 +298,9 @@ function containsSubstring(str, substring) {
  *   countVowels('aEiOu') => 5
  *   countVowels('XYZ') => 1
  */
-function countVowels(/* str */) {
-  throw new Error('Not implemented');
+function countVowels(str) {
+  const vowels = str.match(/[aeiouyAEIOUY]/g);
+  return vowels ? vowels.length : 0;
 }
 
 /**
@@ -315,8 +316,9 @@ function countVowels(/* str */) {
  *   isPalindrome('apple') => false
  *   isPalindrome('No lemon, no melon') => true
  */
-function isPalindrome(/* str */) {
-  throw new Error('Not implemented');
+function isPalindrome(str) {
+  const letters = str.toLowerCase().match(/[a-z]/g);
+  return letters.join('') === letters.reverse().join('');
 }
 
 /**
